@@ -9,6 +9,6 @@ const {
 } = require('../../controllers/userController.js')
 
 router.route('/').get(getUsers).post(createUser)
-router.route('/:courseId').get(getUser).put(updateUser).delete(deleteUser)
+router.route('/:userId').get(getUser).put(updateUser).delete(deleteUser)
 
 module.exports = router
