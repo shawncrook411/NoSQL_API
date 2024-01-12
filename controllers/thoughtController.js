@@ -1,5 +1,8 @@
 const { Thought } = require('../models')
 
+
+//test
+
 module.exports = {
     async getThought(req, res){
         try {
