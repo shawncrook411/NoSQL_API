@@ -1,9 +1,6 @@
 const { User, Thought } = require('../models')
 const mongoose = require('mongoose')
 
-
-//test
-
 module.exports = {
     async getThought(req, res){
         try {
@@ -34,11 +31,10 @@ module.exports = {
             const thought = await Thought.create(req.body)
             if(!thought) return res.status(500).json({ message: 'Creation failure' })
 
-            const updatedUser = await User.findOneAndUpdate(
-                { _id: req.body.username },
+            await User.findOneAndUpdate(
+                { username: req.body.username },
                 { $push: {thoughts: thought._id.toString()}}
-            )            
-
+            )      
             res.json(thought)
 
         } catch (err) {
