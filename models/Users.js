@@ -17,7 +17,12 @@ const userSchema = new mongoose.Schema({
         validate: [ isEmail, 'Invalid Email' ]
     },
     friends: Array,
-    thoughts: Array,
+    thoughts: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
+    ],
 })
 
 userSchema.virtual('friendCount').get(function () {
