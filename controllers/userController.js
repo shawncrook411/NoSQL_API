@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 module.exports = {
     async getUser(req, res) {
         try {
-            const user = await User.findOne({ _id: req.params.courseId }).populate('thoughts')
+            const user = await User.findOne({ _id: req.params.userId }).populate('thoughts')
 
             if(!user) return res.status(404).json({ message: 'No user found' })
 

@@ -4,7 +4,7 @@ const userRoutes = require('./userRoutes')
 const seedRoute = require('./seed')
 
 
-router.use('/thoughts', thoughtsRoutes)
+router.use('/thought', thoughtsRoutes)
 router.use('/user', userRoutes)
 router.use('/seed', seedRoute)
 
